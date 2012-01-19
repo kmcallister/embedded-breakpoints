@@ -17,3 +17,5 @@ If the program contains no EMBED_BREAKPOINT statements, you will get an error li
 
 
 Depends on: GNU toolchain, BFD, Linux /proc
+
+On Debian or Ubuntu:  apt-get install binutils-dev
