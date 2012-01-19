@@ -67,13 +67,13 @@ int main(int argc, char *argv[]) {
 
     // Execute GDB with that script, along with original args
 
-    char **gdb_args = malloc(sizeof(char*) * (argc+3));
-    if (!gdb_args)
-        die("Could not allocate gdb_args\n");
-
     char fd_file_path[FD_FILE_MAX_LEN];
     snprintf(fd_file_path, FD_FILE_MAX_LEN,
         "%s%d", FD_DIR, fileno(temp));
+
+    char **gdb_args = malloc(sizeof(char*) * (argc+3));
+    if (!gdb_args)
+        die("Could not allocate gdb_args\n");
 
     gdb_args[0] = "gdb";
     gdb_args[1] = "-x";
