@@ -1,0 +1,19 @@
+A small hack for embedding GDB breakpoints in C source code.
+
+
+Look at example.c, then run:
+
+    $ ./build.sh
+    $ ./gdb-with-breakpoints ./example
+    (gdb) run
+
+gdb-with-breakpoints passes all its arguments to gdb.  Additionally, the *last*
+argument must be a valid path to the program being debugged.
+
+
+If the program contains no EMBED_BREAKPOINT statements, you will get an error like:
+
+    bfd_get_section_by_name: File in wrong format
+
+
+Depends on: GNU toolchain, BFD, Linux /proc
