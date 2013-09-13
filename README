@@ -19,3 +19,18 @@ If the program contains no EMBED_BREAKPOINT statements, you will get an error li
 Depends on: GNU toolchain, BFD, Linux /proc
 
 On Debian or Ubuntu:  apt-get install binutils-dev
+
+The program ./gdb-with-breakpoints can even be used in EMACS debugger. 
+To invoke it type M-x gdb, then change
+    
+    gdb -i=mi 
+    
+to
+
+    ./gdb-with-breakpoints -i=mi
+    
+That is in our example case:
+
+    ./gdb-with-breakpoints -i=mi example 
+    
+You will get a buffer of the program source with breakpoints marked.

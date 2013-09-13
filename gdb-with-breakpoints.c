@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#if !defined PACKAGE && !defined PACKAGE_VERSION
+#define PACKAGE "gdb-with-breakpoints"
+#endif
 #include <bfd.h>
 
 
